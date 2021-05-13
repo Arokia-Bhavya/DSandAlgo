@@ -19,6 +19,13 @@ public class MoveZeroes {
 
 	}
 	
+	@Test
+	public void example3()
+	{
+		Assert.assertArrayEquals(new int[] {1,0,0,0,0},movezeroes(new int[] {0,0,0,0,1}));
+
+	}
+	
 	
 
 	/*
@@ -43,7 +50,7 @@ public class MoveZeroes {
 	 * TC O(N)
 	 * SC O(1)
 	 */
-	private int[] movezeroes(int[] inputArray) {
+	private int[] movezeroesUsingForloops(int[] inputArray) {
 		int count=0;
 		for(int index=0;index<inputArray.length;index++)
 		{
@@ -55,6 +62,26 @@ public class MoveZeroes {
 			inputArray[count++]=0;
 		}
 		
+		return inputArray;
+	}
+	
+	/*
+	 * TC O(N)
+	 * SC O(1)
+	 */
+	
+	private int[] movezeroes(int[] inputArray)
+	{
+		for(int left=0,right=0;right<inputArray.length;right++)
+		{
+			if(inputArray[right]!=0)
+			{
+				int tmp=inputArray[left];
+				inputArray[left]=inputArray[right];
+				inputArray[right]=tmp;
+				left++;
+			}
+		}
 		return inputArray;
 	}
 	

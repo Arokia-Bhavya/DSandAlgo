@@ -2,7 +2,9 @@ package easy;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.junit.Assert;
 import org.junit.Test;
@@ -17,7 +19,7 @@ public class IntersectArrays {
 	@Test
 	public void example2()
 	{
-		Assert.assertArrayEquals(new Integer[] {4,9}, getIntersectArrays(new int[] {4,9,5},new int[] {9,4,9,8,4}));
+		Assert.assertArrayEquals(new Integer[] {9,4}, getIntersectArrays(new int[] {4,9,5},new int[] {9,4,9,8,4}));
 	}
 	
 	@Test
@@ -31,7 +33,7 @@ public class IntersectArrays {
 	 * SC : O(n)
 	 */
 
-	private Integer[] getIntersectArrays(int[] inputArray1, int[] inputArray2) {
+	private Integer[] getIntersectArraysUsing2PointerApproach(int[] inputArray1, int[] inputArray2) {
 		List<Integer> outputlist=new ArrayList<Integer>();
 		Arrays.sort(inputArray1);
 		Arrays.sort(inputArray2);
@@ -49,6 +51,37 @@ public class IntersectArrays {
 		}
 		Integer[] arr = new Integer[outputlist.size()];        	
 		
+		return outputlist.toArray(arr);
+	}
+	
+	private Integer[] getIntersectArrays(int[] inputArray1, int[] inputArray2)
+	{
+		List<Integer> outputlist=new ArrayList<Integer>();
+
+		HashMap<Integer,Integer> map=new HashMap<Integer,Integer>();
+		for(int num:inputArray1)
+		{
+			map.put(num, map.getOrDefault(num, 0) + 1);
+		}
+		
+		for(int index=0;index<inputArray2.length;index++)
+		{
+			if(map.containsKey(inputArray2[index]))
+			{
+				if(map.get(inputArray2[index])>1)
+					map.put(inputArray2[index], map.get(inputArray2[index]) - 1);
+				else
+				{
+					map.remove(inputArray2[index]);
+					
+				}
+				outputlist.add(inputArray2[index]);
+			}
+		}
+		
+		
+		Integer[] arr = new Integer[outputlist.size()];        	
+
 		return outputlist.toArray(arr);
 	}
 
