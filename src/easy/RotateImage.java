@@ -15,7 +15,10 @@ public void example2()
 {
 	Assert.assertArrayEquals(new int[][] {{3,1},{4,2}}, getRotateImageUsingExtraSpace(new int[][] {{1,2},{3,4}}));	
 }
-
+/*
+ * TC O(n)
+ * SC O(1)
+ */
 private int[][] getRotateImage(int[][] image) {
 	
 	int n = image[0].length;
@@ -35,7 +38,10 @@ private int[][] getRotateImage(int[][] image) {
 	return image;
 }
 
-
+/*
+ * TC O(n)
+ * SC O(n)
+ */
 private int[][] getRotateImageUsingExtraSpace(int[][] image) {
 	
 	int n = image[0].length;
