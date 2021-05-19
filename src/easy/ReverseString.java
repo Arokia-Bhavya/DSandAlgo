@@ -19,10 +19,10 @@ public class ReverseString {
 
 	/*
 	 * 2 Pointer Approach
-	 * TC O(n)
+	 * TC O(n/2)
 	 * SC O(1)
 	 */
-	private char[] reverseString(char[] s) {
+	private char[] reverseStringUsing2pointerApproach(char[] s) {
 		for(int left=0,right=s.length -1 ;left<right;left++,right--)
         {
             char tmp=s[left];
@@ -32,4 +32,24 @@ public class ReverseString {
 		return s;
 	}
 
+	/*
+	 * Using Recursion
+	 * TC O(n/2)
+	 * SC O(1)
+	 */
+	private char[] reverseString(char[] input)
+	{
+		return helper(0,input.length - 1,input);
+	}
+
+	private char[] helper(int left, int right, char[] input) {
+		
+		if(left>=right)
+			return input;
+		char tmp=input[left];
+		input[left++]=input[right];
+		input[right--]=tmp;
+		
+		return helper(left,right,input);
+	}
 }
