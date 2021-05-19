@@ -34,6 +34,7 @@ public void example4()
  * TC O(log(x)) where x is number of digits
  * SC O(1)
  * 
+ * Note there is possibility of integer overflow 
  */
 private int getReverseInteger(int input) {
 	int reversed=0;
