@@ -1,4 +1,4 @@
-package easy;
+package TwoPointer;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -13,19 +13,19 @@ public class IntersectArrays {
 	@Test
 	public void example1()
 	{
-		Assert.assertArrayEquals(new Integer[] {2,2}, getIntersectArrays(new int[] {1,2,2,1},new int[] {2,2}));
+		Assert.assertArrayEquals(new int[] {2,2}, getIntersectArrays(new int[] {1,2,2,1},new int[] {2,2}));
 	}
 	
 	@Test
 	public void example2()
 	{
-		Assert.assertArrayEquals(new Integer[] {9,4}, getIntersectArrays(new int[] {4,9,5},new int[] {9,4,9,8,4}));
+		Assert.assertArrayEquals(new int[] {9,4}, getIntersectArrays(new int[] {4,9,5},new int[] {9,4,9,8,4}));
 	}
 	
 	@Test
 	public void example3()
 	{
-		Assert.assertArrayEquals(new Integer[] {2}, getIntersectArrays(new int[] {1,2,2,1},new int[] {2}));
+		Assert.assertArrayEquals(new int[] {2}, getIntersectArrays(new int[] {1,2,2,1},new int[] {2}));
 	}
 	/*
 	 * 2 pointer approach
@@ -33,7 +33,7 @@ public class IntersectArrays {
 	 * SC : O(n)
 	 */
 
-	private Integer[] getIntersectArraysUsing2PointerApproach(int[] inputArray1, int[] inputArray2) {
+	private int[] getIntersectArraysUsing2PointerApproach(int[] inputArray1, int[] inputArray2) {
 		List<Integer> outputlist=new ArrayList<Integer>();
 		Arrays.sort(inputArray1);
 		Arrays.sort(inputArray2);
@@ -49,12 +49,21 @@ public class IntersectArrays {
 			else
 				left2++;
 		}
-		Integer[] arr = new Integer[outputlist.size()];        	
+		int[] output = new int[outputlist.size()];    
+		int count=0;
+		for(int num:outputlist)
+		{
+			output[count++]=num;
+		}
 		
-		return outputlist.toArray(arr);
+		return output;
 	}
 	
-	private Integer[] getIntersectArrays(int[] inputArray1, int[] inputArray2)
+	/*
+	 * TC:
+	 * SC:
+	 */
+	private int[] getIntersectArrays(int[] inputArray1, int[] inputArray2)
 	{
 		List<Integer> outputlist=new ArrayList<Integer>();
 
@@ -80,9 +89,14 @@ public class IntersectArrays {
 		}
 		
 		
-		Integer[] arr = new Integer[outputlist.size()];        	
+		int[] output = new int[outputlist.size()];    
+		int count=0;
+		for(int num:outputlist)
+		{
+			output[count++]=num;
+		}   	
 
-		return outputlist.toArray(arr);
+		return output;
 	}
 
 }
