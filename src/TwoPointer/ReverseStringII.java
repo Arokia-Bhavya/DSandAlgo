@@ -20,6 +20,10 @@ public class ReverseStringII {
 		Assert.assertEquals("bacd",getReverStringII("abcd",2));
 	}
 	
+	/*
+	 * TC:O(n/2)
+	 * SC:O(1)
+	 */
 	private String getReverStringII(String s, int k) {
 		char[] input=s.toCharArray();
         for(int start=0;start<s.length();start+=2*k)

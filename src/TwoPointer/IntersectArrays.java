@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 import org.junit.Assert;
 import org.junit.Test;
@@ -60,8 +59,8 @@ public class IntersectArrays {
 	}
 	
 	/*
-	 * TC:
-	 * SC:
+	 * TC:O(N)
+	 * SC:O(N)
 	 */
 	private int[] getIntersectArrays(int[] inputArray1, int[] inputArray2)
 	{

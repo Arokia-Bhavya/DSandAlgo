@@ -33,7 +33,10 @@ public class ReverseWords {
 	{
 		Assert.assertEquals("bob like even not does Alice",getReverseWord("Alice does not even like bob"));
 	}
-	
+	/*
+	 * TC : O(n/2)
+	 * SC : O(n)
+	 */
 	private String getReverseWord(String s) {
 		StringBuilder output=new StringBuilder();
         String[] values=s.split(" ");

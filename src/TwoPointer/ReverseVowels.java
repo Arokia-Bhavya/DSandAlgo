@@ -1,11 +1,9 @@
 package TwoPointer;
 
-import java.util.ArrayList;
-import java.util.List;
 
 import org.junit.Test;
+import org.junit.Assert;
 
-import junit.framework.Assert;
 
 public class ReverseVowels {
 	
@@ -26,7 +24,7 @@ public class ReverseVowels {
 	
 /*
  * TC O(n/2)
- * SC O(1)
+ * SC O(n)
  */
 	private String getReverseString(String input) {
 		
