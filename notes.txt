@@ -7,6 +7,7 @@ https://leetcode.com/problems/reverse-words-in-a-string-ii/ - Y
 https://leetcode.com/problems/valid-palindrome/ - Y
 https://www.geeksforgeeks.org/move-negative-numbers-beginning-positive-end-constant-extra-space/
 https://leetcode.com/problems/merge-sorted-array/ - Y [https://leetcode.com/problems/merge-sorted-array/discuss/1346519/Java-Simple-0-ms-Solution-with-O(m%2Bn)]
-https://leetcode.com/problems/remove-duplicates-from-sorted-array/
+https://leetcode.com/problems/remove-duplicates-from-sorted-array/ Y
 https://log2base2.com/courses/coding-interview-patterns/pair-with-target-sum-two-pointers-problem
+https://log2base2.com/courses/coding-interview-patterns/remove-all-occurrences-of-element-from-array-two-pointers-problem Y
 https://leetcode.com/problems/valid-palindrome-ii/
