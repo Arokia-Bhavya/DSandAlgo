@@ -11,3 +11,11 @@ https://leetcode.com/problems/remove-duplicates-from-sorted-array/ Y
 https://log2base2.com/courses/coding-interview-patterns/pair-with-target-sum-two-pointers-problem
 https://log2base2.com/courses/coding-interview-patterns/remove-all-occurrences-of-element-from-array-two-pointers-problem Y
 https://leetcode.com/problems/valid-palindrome-ii/
+
+Sliding Window
+https://www.techiedelight.com/sliding-window-problems/
+https://log2base2.com/courses/coding-interview-patterns/max-sum-subarray-of-size-k-sliding-window-problem
+https://leetcode.com/problems/longest-substring-without-repeating-characters/
+https://log2base2.com/courses/coding-interview-patterns/smallest-subarray-with-given-sum-sliding-window-problem
+https://leetcode.com/problems/max-consecutive-ones-iii/
+https://code.dennyzhang.com/diet-plan-performance
