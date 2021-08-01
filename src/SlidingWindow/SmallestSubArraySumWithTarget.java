@@ -2,7 +2,7 @@ package SlidingWindow;
 import org.junit.Assert;
 import org.junit.Test;
 
-public class SmallestSubArraySum {
+public class SmallestSubArraySumWithTarget {
 	@Test
 	public void example1()
 	{
@@ -27,6 +27,12 @@ public class SmallestSubArraySum {
 		Assert.assertEquals(2, minSubArrayLen(7,new int[]{4,1,5,2,4,1}));
 	}
 	
+	@Test
+	public void example5()
+	{
+		Assert.assertEquals(1, minSubArrayLen(6,new int[]{10,2,3}));
+	}
+	
 	/*
 	 * Keep adding the elements and check whether it equals the target
 	 * then set the min value of the length of array between left and right pointer
@@ -36,22 +42,18 @@ public int minSubArrayLen(int target, int[] nums) {
 	 int min=Integer.MAX_VALUE;
 	 int left=0;
 	 int current_sum=nums[left];
-	 for(int right=1;right<=nums.length - 1 && left<=nums.length - 1;)
+	 if(current_sum>=target)
+         min=Math.min(min,1);
+	 for(int right=1;right<nums.length;)
 	 {
-		 if(current_sum == target)
-		 {
+		 current_sum=current_sum + nums[right++];
+		 while(current_sum>=target)
+		 {			 
 			 min=Math.min(min, right - left);
-			 current_sum = current_sum - nums[left++];
-		 }else if(current_sum > target)
-		 {
-			 current_sum = current_sum - nums[left++];
-			 
-		 }else
-		 {
-			 current_sum = current_sum + nums[right++];			 
+			 current_sum=current_sum - nums[left++];
 		 }
-       
-    }
+		 
+	 }
 	 
 	 return min==Integer.MAX_VALUE? 0:min;
 	}

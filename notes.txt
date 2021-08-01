@@ -13,10 +13,13 @@ https://log2base2.com/courses/coding-interview-patterns/remove-all-occurrences-o
 https://leetcode.com/problems/valid-palindrome-ii/
 
 Sliding Window
-https://www.techiedelight.com/sliding-window-problems/
-https://log2base2.com/courses/coding-interview-patterns/max-sum-subarray-of-size-k-sliding-window-problem Y
+https://log2base2.com/courses/coding-interview-patterns/max-sum-subarray-of-size-k-sliding-window-problem Y || https://leetcode.com/problems/maximum-size-subarray-sum-equals-k/
+https://log2base2.com/courses/coding-interview-patterns/smallest-subarray-with-given-sum-sliding-window-problem Y || https://leetcode.com/problems/minimum-size-subarray-sum
+https://leetcode.com/problems/substrings-of-size-three-with-distinct-characters/
 https://leetcode.com/problems/longest-substring-without-repeating-characters/
-https://log2base2.com/courses/coding-interview-patterns/smallest-subarray-with-given-sum-sliding-window-problem
-https://leetcode.com/problems/minimum-size-subarray-sum/
 https://leetcode.com/problems/max-consecutive-ones-iii/
+https://leetcode.com/problems/longest-palindrome/
 https://code.dennyzhang.com/diet-plan-performance
+https://leetcode.com/problems/grumpy-bookstore-owner/
+https://leetcode.com/problems/maximum-subarray/
+https://www.techiedelight.com/sliding-window-problems/
