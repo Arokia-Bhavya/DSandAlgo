@@ -39,13 +39,44 @@ public class FindAnagrams {
 		List<Integer> actualOutput=getStartIndicesAnagram("baa","aa");
 		Assert.assertTrue(actualOutput.containsAll(expectedOutput));
 	}
+	
+	private List<Integer> getStartIndicesAnagram(String input, String anagram) {
+		List<Integer> output=new ArrayList<Integer>();
+		int target = anagram.length();
+		int[] anagramArr=new int[26];
+		for(char value:anagram.toCharArray())
+		{
+			anagramArr[value - 'a']++;
+		}
+		int[] current_window=new int[26];
+		for(int count=0;count<target;count++)
+		{
+			current_window[input.charAt(count) - 'a']++;
+		}
+		if(isAnagramMatch(current_window,anagramArr))
+			output.add(0);
+		for(int count=0;count<input.length() - target;count++)
+		{
+				current_window[input.charAt(count) - 'a']--;
+				current_window[input.charAt(count+target) - 'a']++;				
+				if(isAnagramMatch(current_window,anagramArr))
+					output.add(count+1);
+		}
+		return output;
+	}
+	private boolean isAnagramMatch(int[] current_window, int[] anagramArr) {
+		
+		return Arrays.equals(current_window, anagramArr);
+	}
+
+
 	/*
 	 * get the current window and check whether it s anagram
 	 * keep removing character from left and adding character in right
 	 * when found anagram add the index to output
 	 * Iterate till u meet the length - target
 	 */
-	private List<Integer> getStartIndicesAnagram(String input, String anagram) {
+	private List<Integer> getStartIndicesAnagramUsingSubstring(String input, String anagram) {
 		List<Integer> output=new ArrayList<Integer>();
 		int target = anagram.length();
 		for(int count=0;count<=input.length() - target;count++)
