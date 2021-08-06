@@ -17,7 +17,8 @@ https://log2base2.com/courses/coding-interview-patterns/max-sum-subarray-of-size
 https://log2base2.com/courses/coding-interview-patterns/smallest-subarray-with-given-sum-sliding-window-problem Y || https://leetcode.com/problems/minimum-size-subarray-sum
 https://leetcode.com/problems/substrings-of-size-three-with-distinct-characters/ Y
 https://leetcode.com/problems/find-all-anagrams-in-a-string/ Y
-https://leetcode.com/problems/longest-substring-without-repeating-characters/
+https://leetcode.com/problems/longest-substring-without-repeating-characters/ Y
+https://leetcode.com/problems/max-consecutive-ones/
 https://leetcode.com/problems/max-consecutive-ones-iii/
 https://leetcode.com/problems/longest-palindrome/
 https://code.dennyzhang.com/diet-plan-performance
