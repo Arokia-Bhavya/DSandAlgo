@@ -31,24 +31,27 @@ public class MaxConsecutiveOnesII {
 	
 
 	public int findMaxConsecutiveOnes(int[] nums,int flipCount) {
-        int window_length=0;
+        int zerosCount=0;
+        int start=0;
+        int end=0;
         int maxlen=0;
-        int localFlipCount=flipCount;
-        for(int count=0;count<nums.length;count++)
+        for(;end<nums.length;end++)
         {
-            if(nums[count]!=1 && localFlipCount==0)
-            {
-                maxlen=Math.max(window_length,maxlen);
-                window_length=1;
-                localFlipCount=flipCount - 1;
-            }else if(nums[count]!=1 && localFlipCount>0)
-            {
-            	localFlipCount--;
-            	window_length++; 
-            }
-            else
-              window_length++;  
+        	if(nums[end]==0)
+        	{
+        		zerosCount++;
+        	}
+        	
+        	while(zerosCount > flipCount)
+        	{
+        		if(nums[start]==0)
+        			zerosCount --;
+        		start++;
+        		
+        	}
+        	maxlen=Math.max(maxlen, (end - start) + 1);
         }
-        return Math.max(window_length,maxlen);
+        
+        return maxlen;
     }
 }
