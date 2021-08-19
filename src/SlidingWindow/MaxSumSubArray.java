@@ -33,7 +33,14 @@ public class MaxSumSubArray {
 	 */
 
 	private int getMaxSumSubArray(int[] inputArray) {
-		
+		int total=0;
+		int max=0;
+		for(int index=0;index<inputArray.length;index++)
+		{
+			total=total+inputArray[index];
+			max=Math.max(max, total);
+		}
+		return max;
 	}
 
 }

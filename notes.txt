@@ -22,6 +22,6 @@ https://leetcode.com/problems/max-consecutive-ones/ Y
 https://leetcode.com/problems/max-consecutive-ones-iii/ Y
 https://leetcode.com/problems/longest-palindrome/
 https://code.dennyzhang.com/diet-plan-performance Y
-https://leetcode.com/problems/grumpy-bookstore-owner/
+https://leetcode.com/problems/grumpy-bookstore-owner/ Y
 https://leetcode.com/problems/maximum-subarray/
 https://www.techiedelight.com/sliding-window-problems/

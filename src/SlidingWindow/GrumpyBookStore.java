@@ -1,5 +1,8 @@
 package SlidingWindow;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -21,38 +24,26 @@ public class GrumpyBookStore {
 	public void example3()
 	{
 		Assert.assertEquals(24, countHappyCustomers(new int[] {4,10,10},new int[] {1,1,0},2));
+			
 	}
-
 	private int countHappyCustomers(int[] customers, int[] grumpy, int minutes) {
-		int total=0;
-		int maxProfit=0;
-		int maxEnd=0;
-		int currentProfit=0;
-		for(int count=0;count<minutes;count++)
-			currentProfit=currentProfit + customers[count];
-		maxProfit=currentProfit;
-		maxEnd=minutes;
-		for(int count=minutes;count<customers.length;count++)
+		int satisfied=0;
+		int maxUnSatisfied=0;
+		int currentUnSatisfied=0;
+		for(int index=0;index < customers.length;index++)
 		{
-			currentProfit=currentProfit - customers[count-minutes] + customers[count];
-			if(currentProfit>maxProfit)
+			
+			satisfied+=grumpy[index]== 0?customers[index]:0;
+			currentUnSatisfied+=grumpy[index]== 1?customers[index]:0;
+			if(index>=minutes)
 			{
-				maxProfit=currentProfit;
-				maxEnd=count;
+				currentUnSatisfied -= grumpy[index - minutes]==1? customers[index - minutes]:0;  
 			}
-		}
-		total=maxProfit;
-		int max_start=(maxEnd - minutes) + 1;
-		for(int count=0;count<grumpy.length;count++)
-		{
-			if(grumpy[count]==0 && (count < max_start || count > maxEnd))
-			{
-				System.out.println("count "+count+"customers[count]"+customers[count]);
-				total=total+customers[count];
-			}
+			maxUnSatisfied=Math.max(maxUnSatisfied, currentUnSatisfied);
 		}
 		
-		return total;
+		
+		return satisfied+Math.max(currentUnSatisfied, maxUnSatisfied);
 	}
 	
 	
