@@ -28,9 +28,9 @@ https://leetcode.com/problems/maximum-subarray/
 https://www.techiedelight.com/sliding-window-problems/
 
 HashTable
-https://leetcode.com/problems/jewels-and-stones/
-https://leetcode.com/problems/contains-duplicate/
-https://leetcode.com/problems/single-number/
+https://leetcode.com/problems/jewels-and-stones/ Y
+https://leetcode.com/problems/contains-duplicate/ Y
+https://leetcode.com/problems/single-number/ Y
 https://leetcode.com/problems/word-pattern/
 https://leetcode.com/problems/contains-duplicate-iii/
 https://leetcode.com/problems/top-k-frequent-words/
