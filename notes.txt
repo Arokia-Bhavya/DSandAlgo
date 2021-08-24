@@ -11,6 +11,7 @@ https://leetcode.com/problems/remove-duplicates-from-sorted-array/ Y
 https://log2base2.com/courses/coding-interview-patterns/pair-with-target-sum-two-pointers-problem
 https://log2base2.com/courses/coding-interview-patterns/remove-all-occurrences-of-element-from-array-two-pointers-problem Y
 https://leetcode.com/problems/valid-palindrome-ii/
+https://leetcode.com/problems/shuffle-the-array/
 
 Sliding Window
 https://log2base2.com/courses/coding-interview-patterns/max-sum-subarray-of-size-k-sliding-window-problem Y || https://leetcode.com/problems/maximum-size-subarray-sum-equals-k/
@@ -37,12 +38,39 @@ https://leetcode.com/problems/isomorphic-strings/
 https://leetcode.com/problems/missing-number/ & https://leetcode.com/problems/find-the-duplicate-number/ = https://www.geeksforgeeks.org/find-a-repeating-and-a-missing-number/
 https://www.lintcode.com/en/old/problem/strobogrammatic-number/
 https://leetcode.com/problems/frequency-of-the-most-frequent-element/
+https://leetcode.com/problems/number-of-good-pairs/
+https://leetcode.com/problems/richest-customer-wealth/
+https://leetcode.com/problems/first-missing-positive/
+
+Queue
+https://leetcode.com/problems/remove-all-adjacent-duplicates-in-string/
+https://www.geeksforgeeks.org/interleave-first-half-queue-second-half/
+https://www.geeksforgeeks.org/check-if-x-can-give-change-to-every-person-in-the-queue/
+
+Stack
+https://leetcode.com/problems/minimum-add-to-make-parentheses-valid/
+https://leetcode.com/problems/crawler-log-folder/
+https://leetcode.com/problems/decode-string/
+https://leetcode.com/problems/make-the-string-great/
+https://leetcode.com/problems/remove-outermost-parentheses/
+https://leetcode.com/problems/remove-invalid-parentheses/
 
 Binary Search
 https://leetcode.com/problems/find-smallest-letter-greater-than-target/
+https://www.techiedelight.com/find-smallest-missing-element-sorted-array/
 
 recursion
 https://leetcode.com/problems/n-th-tribonacci-number/
 https://leetcode.com/problems/add-digits/
 https://www.geeksforgeeks.org/sum-of-natural-numbers-using-recursion/
 https://www.geeksforgeeks.org/recamans-sequence/
+
+BackTracking
+https://leetcode.com/problems/combination-sum-ii/
+https://leetcode.com/problems/combination-sum/
+
+Tree
+https://leetcode.com/problems/balanced-binary-tree/
+https://leetcode.com/problems/second-minimum-node-in-a-binary-tree/
+https://leetcode.com/problems/minimum-absolute-difference-in-bst/
+https://leetcode.com/problems/symmetric-tree/
