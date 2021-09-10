@@ -11,6 +11,6 @@
 
 ***Hashing***
 ***Dynamic Programming***
--Iterative or Top Down
--Recursive or Bottom Up
+- Iterative or Top Down
+- Recursive or Bottom Up
 
