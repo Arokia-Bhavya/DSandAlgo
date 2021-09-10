@@ -10,6 +10,7 @@
 - Window of variable size
 
 ***Hashing***
+- 
 ***Dynamic Programming***
 - Iterative or Top Down
 - Recursive or Bottom Up
