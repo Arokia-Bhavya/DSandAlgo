@@ -28,17 +28,35 @@ public class MaxSumSubArray {
 
 	}
 
+	private int getMaxSumSubArrayUsingBruteForce(int[] nums) {
+		int max = nums[0];
+		int cur_sum = nums[0];
+		for(int index=0;index<nums.length;index++)
+		{
+			cur_sum = nums[index];
+			max=Math.max(cur_sum, max);
+			for(int loopIndex=index + 1;loopIndex<nums.length;loopIndex++)
+			{	
+				cur_sum=cur_sum+nums[loopIndex];
+				max=Math.max(cur_sum, max);
+			}
+		}
+		return max;
+	}
 	/*
-	 * keep adding the elements 
+	 * check whether the cur+sum + cur_element > cur_sum
+	 * then add otherwise ignore previous elements and set cur_element as cur_sum
+	 * keep setting the maximum element;
 	 */
 
-	private int getMaxSumSubArray(int[] inputArray) {
-		int total=0;
-		int max=0;
-		for(int index=0;index<inputArray.length;index++)
+	private int getMaxSumSubArray(int[] nums) {
+		int max = nums[0];
+	    int cur_sum = nums[0];
+		for(int index=1;index<nums.length;index++)
 		{
-			total=total+inputArray[index];
-			max=Math.max(max, total);
+			
+			cur_sum=(cur_sum + nums[index]) > nums[index] ? cur_sum + nums[index]:nums[index];			
+			max=Math.max(cur_sum, max);
 		}
 		return max;
 	}
