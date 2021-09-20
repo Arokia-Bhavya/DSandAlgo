@@ -17,3 +17,8 @@
 - Iterative or Top Down
 - Recursive or Bottom Up
 
+***Other DataStructures***
+- LinkedList
+- Stack
+- Queue
+
