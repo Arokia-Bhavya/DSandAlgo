@@ -29,29 +29,30 @@ public class Search2DMatrix {
 	Assert.assertEquals(false,searchMatrix(new int[][]{{1},{3}},0));
 	}
 
+	/*O(logN)*/
 	private boolean searchMatrix(int[][] input, int target) {
 		if (input == null || input.length == 0 || input[0].length == 0) {
             return false;
         }
-        int row = input.length;
-        int col = input[0].length;
-        int start = 0;
-        int end = row * col - 1;
+        int rows = input.length;
+        int cols = input[0].length;
+        int left = 0;
+        int right = rows * cols - 1;
         int mid;
 
-        while (start + 1 < end) {
-            mid = start + (end - start)/2;
-            int num = input[mid/col][mid%col];
+        while (left<=right) {
+            mid = left + (right - left)/2;
+            int num = input[mid/cols][mid%cols];
             if (target == num) {
                 return true;
             } else if (num < target) {
-                start = mid;
+                left = mid + 1;
             } else {
-                end = mid;
+                right = mid - 1;
             }
         }
 
-        return (input[start/col][start%col] == target || input[end/col][end%col] == target);
+        return false;
 	}
 	
 	
