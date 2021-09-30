@@ -17,8 +17,13 @@
 - Iterative or Top Down
 - Recursive or Bottom Up
 
+***Searching***
+- Linear search
+- Binary search
+
 ***Other DataStructures***
 - LinkedList
 - Stack
 - Queue
+- Tree
 
