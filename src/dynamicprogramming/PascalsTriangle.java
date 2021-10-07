@@ -1,4 +1,4 @@
-package LinkedList;
+package dynamicprogramming;
 
 import static org.junit.Assert.assertEquals;
 
