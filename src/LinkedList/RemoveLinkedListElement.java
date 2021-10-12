@@ -10,7 +10,7 @@ public class RemoveLinkedListElement {
 	{
 		ListNode input=new ListNode(1,new ListNode(2,new ListNode(6,new ListNode(3,new ListNode(4,new ListNode(5,new ListNode(6,null)))))));
 		ListNode output=new ListNode(1,new ListNode(2,new ListNode(3,new ListNode(4,new ListNode(5,null)))));
-		Assert.assertTrue(isLinkedListSame(output,RemoveLinkedListElement(input,6)));
+		Assert.assertTrue(ListNode.isLinkedListSame(output,RemoveLinkedListElement(input,6)));
 	}
 
 	
@@ -19,7 +19,7 @@ public class RemoveLinkedListElement {
 	{
 		ListNode input=null;
 		ListNode output=null;
-		Assert.assertTrue(isLinkedListSame(output,RemoveLinkedListElement(input,1)));
+		Assert.assertTrue(ListNode.isLinkedListSame(output,RemoveLinkedListElement(input,1)));
 	}
 	
 	@Test
@@ -27,17 +27,10 @@ public class RemoveLinkedListElement {
 	{
 		ListNode input=new ListNode(7,new ListNode(7,new ListNode(7,new ListNode(7,null))));
 		ListNode output=null;
-		Assert.assertTrue(isLinkedListSame(output,RemoveLinkedListElement(input,7)));
+		Assert.assertTrue(ListNode.isLinkedListSame(output,RemoveLinkedListElement(input,7)));
 	}
 	
-	private boolean isLinkedListSame(ListNode output, ListNode input) {
-		while(input!=null && output!=null && input.val==output.val)
-		{
-			input = input.next;
-			output = output.next;
-		}
-		return input==null && output==null;
-	}
+	
 
 	private ListNode RemoveLinkedListElement(ListNode input,int val) {
 		if(input == null)
