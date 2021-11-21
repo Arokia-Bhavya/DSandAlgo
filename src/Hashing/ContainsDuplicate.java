@@ -28,6 +28,7 @@ public class ContainsDuplicate {
 		Assert.assertEquals(true, containsDuplicate(new int[] {1,1,1,3,3,4,3,2,4,2}));
 
 	}
+	/*TC O(nlogn)*/
 	public boolean containsDuplicate(int[] nums)
     {
         Arrays.sort(nums);
@@ -39,6 +40,7 @@ public class ContainsDuplicate {
         return false;
     }
 	
+	/*TC O(n) SC O(n)*/
 	public boolean containsDuplicateUsingHashing(int[] nums)
     {
         HashSet<Integer> unique=new HashSet<Integer>();
@@ -52,6 +54,7 @@ public class ContainsDuplicate {
         return false;
     }
 	
+	/*TC O(n2)*/
 	public boolean containsDuplicateUsingBruteForce(int[] nums) {
         for(int count=0;count<nums.length;count++)
         {
