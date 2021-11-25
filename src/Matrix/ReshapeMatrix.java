@@ -31,12 +31,30 @@ public class ReshapeMatrix {
 		return output;
 	}
 
+    /*TC O(n) SC O(n)*/
+	private int[][] reshapeUsingArray(int[][] input, int rows, int cols) {
+		if((input.length*input[0].length)!=(rows*cols))
+			return input;
+		int[] interimOutput=new int[input.length*input[0].length];
+		int[][] output=new int[rows][cols];
+		for(int index=0;index<interimOutput.length;index++)
+		{
+			interimOutput[index]=input[index/input.length][index%input[0].length];
+		}
+		
+		for(int index=0;index<interimOutput.length;index++)
+		{
+			output[index/cols][index%cols]=interimOutput[index];
+		}
+		return output;
+	}
+
 
 	/*
 	 * TC O(m1*n1) + O(m2*n2)
 	 * SC O(m1*n1)
 	 */
-	private int[][] reshapeUsingBruteForce(int[][] input, int rows, int cols) {
+	private int[][] reshapeUsingArrayListNestedLoop(int[][] input, int rows, int cols) {
 
 		if((input.length*input[0].length)!=(rows*cols))
 		return input;
@@ -60,6 +78,34 @@ public class ReshapeMatrix {
 			}
 		}
 		
+		return output;
+	}
+	
+	/*
+	 * TC O(m1*n1) + O(m2*n2)
+	 * SC O(m1*n1)
+	 */	
+	private int[][] reshapeUsingArrayNestedLoop(int[][] input, int rows, int cols) {
+		if(input.length*input[0].length != rows*cols)
+			return input;
+		int[] interimOutput=new int[input.length*input[0].length];
+		int[][] output=new int[rows][cols];
+		int index=0;
+		for(int r=0;r<input.length;r++)
+		{
+			for(int c=0;c<input[0].length;c++)
+			{
+				interimOutput[index++]=input[r][c];
+			}
+		}
+		index=0;
+		for(int r=0;r<rows;r++)
+		{
+			for(int c=0;c<cols;c++)
+			{
+				output[r][c]=interimOutput[index++];
+			}
+		}
 		return output;
 	}
 
