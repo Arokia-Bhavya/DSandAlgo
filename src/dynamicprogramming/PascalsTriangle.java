@@ -51,7 +51,28 @@ public class PascalsTriangle {
 		assertEquals(true,output.equals(generate(1)));
 	}
 
-	private List<List<Integer>> generate(int num) {
+	private List<List<Integer>> generate(int numRows) {
+		List<List<Integer>> output=new ArrayList<List<Integer>>();
+		if(numRows>=1)
+		{
+			List<Integer> firstRow=new ArrayList<Integer>();
+			firstRow.add(1);
+			output.add(firstRow);
+		}
+		for(int index=1;index<numRows;index++)
+		{
+			List<Integer> currentRow=new ArrayList<Integer>();
+			currentRow.add(1);
+			List<Integer> prevRow=output.get(index - 1);
+			for(int left=0,right=left+1;left<prevRow.size() && right <prevRow.size() ;left++,right++)
+				currentRow.add(prevRow.get(left)+prevRow.get(right));
+			currentRow.add(1);
+			output.add(currentRow);
+		}
+		return output;
+	}
+
+	private List<List<Integer>> generate1(int num) {
 		List<List<Integer>> output=new ArrayList<List<Integer>>();
 		
 		for(int index=0;index<num;index++)
