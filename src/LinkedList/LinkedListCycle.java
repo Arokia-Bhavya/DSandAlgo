@@ -49,6 +49,18 @@ public class LinkedListCycle {
 		node2.next=null;
 		Assert.assertEquals(false,hasCycle(node1));
 	}
+	private boolean hasCycle(ListNode node1) {
+		HashSet<ListNode> nodes=new HashSet<ListNode>();
+		ListNode head=node1;
+		while(head!=null)
+		{
+			if(!nodes.add(head))			
+				return true;
+			head=head.next;
+		}
+		return false;
+	}
+
 	/*Using flag TC O(n) SCo(n)*/
 	private boolean hasCycleUsingFlag(ListNode node1) {
 		
@@ -79,7 +91,7 @@ public class LinkedListCycle {
 	}
 	/*slow and fast pointers - Flyods Cycle Detection
 	 * SC O(1) TC k*O(n) where k is number of cycles*/
-	private boolean hasCycle(ListNode node1) {
+	private boolean hasCycleFlyods(ListNode node1) {
 		ListNode left1=node1;
 		ListNode left2=node1;
 		while(left1!=null && left2!=null && left2.next!=null)

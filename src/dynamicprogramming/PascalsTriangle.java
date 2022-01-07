@@ -51,6 +51,7 @@ public class PascalsTriangle {
 		assertEquals(true,output.equals(generate(1)));
 	}
 
+	/*TCO(n2) SC O(n2)*/
 	private List<List<Integer>> generate(int numRows) {
 		List<List<Integer>> output=new ArrayList<List<Integer>>();
 		if(numRows>=1)
