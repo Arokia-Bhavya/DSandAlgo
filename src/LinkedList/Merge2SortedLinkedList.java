@@ -33,6 +33,25 @@ public class Merge2SortedLinkedList {
 		Assert.assertEquals(true, ListNode.isLinkedListSame(output,merge(input1,input2)));
 	}
 	private ListNode merge(ListNode input1, ListNode input2) {
+		if(input1==null)
+			return input2;
+		else if(input2 == null)
+			return input1;
+		ListNode result;
+		if (input1.val <= input2.val)
+        {
+            result = input1;
+            result.next = merge(input1.next, input2);
+        }
+        else {
+            result = input2;
+            result.next = merge(input1, input2.next);
+        }
+ 
+        return result;
+	}
+
+	private ListNode mergeUsingDummyNode(ListNode input1, ListNode input2) {
 		 ListNode head=new ListNode(-1);
 	    ListNode output=head;
         while(input1!=null && input2!=null)
