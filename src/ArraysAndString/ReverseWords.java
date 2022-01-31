@@ -20,16 +20,34 @@ public class ReverseWords {
 	@Test
 	public void example3()
 	{
-		Assert.assertEquals("example good a", reverseWord("a good   example"));
+		Assert.assertEquals("example good a", reverseWord("a good example"));
 	}
 
 	private String reverseWord(String input) {
-    input=input.strip();
-    for(int left=0,right=input.indexOf(" ");right<input.length();)
-    {
-    	
-    }
-    return input;
+		input=input.strip();
+		char[] inputArray=input.toCharArray();
+		reverse(inputArray,0,inputArray.length - 1);
+		input=new String(inputArray);
+		for(int left=0,right=input.indexOf(" ") - 1;left<right;)
+		{
+			reverse(inputArray,left,right);
+			if(input.indexOf(" ",left ) == -1)
+				break;
+			left=input.indexOf(" ",left) + 1;
+			right=input.indexOf(" ",left)==-1?input.length() - 1:input.indexOf(" ",left) - 1;
+		}
+		return new String(inputArray);
+	}
+
+	private void reverse(char[] inputArray,int start,int end) {
+		for(int left=start,right=end;left<right;)
+		{
+			char temp=inputArray[left];
+			inputArray[left]=inputArray[right];
+			inputArray[right]=temp;
+			left++;
+			right--;
+		}
 	}
 
 }

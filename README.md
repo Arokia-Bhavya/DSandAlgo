@@ -27,3 +27,11 @@
 - Queue
 - Tree
 
+***Graph***
+- Directed Graph
+- Undirected Graph
+
+***Graph Representation***
+- Adjacency matrix(dense graph)
+- Adjacenecy list(sparse graph)
+
