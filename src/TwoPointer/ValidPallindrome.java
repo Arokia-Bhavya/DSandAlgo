@@ -18,7 +18,7 @@ public void example2()
 {
 	Assert.assertEquals(false, isValid( "race a car"));	
 }
-
+/*TC O(n) SC O(n)*/
 private Object isValid(String input) {
 	StringBuilder cleanInput=new StringBuilder(input.length());
 	for(char value:input.toLowerCase().toCharArray())
