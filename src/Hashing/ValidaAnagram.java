@@ -20,7 +20,27 @@ public void example2()
 	Assert.assertEquals(false, isAnagram("car", "rat"));
 }
 
-public boolean isAnagram(String s, String t)
+/*TC O(n) SC O(1)*/
+private boolean isAnagram(String input1, String input2) {
+	int[] count=new int[26];
+	for(char value:input1.toCharArray())
+	{
+		count[value - 'a']++;
+	}
+	for(char value:input2.toCharArray())
+	{
+		count[value - 'a']--;
+	}
+	for(int value:count)
+	{
+		if(value!=0)
+			return false;
+	}
+	return true;
+}
+
+/*TC O(nlogn)*/
+public boolean isAnagramUsingSortin(String s, String t)
 {
   if(s.length() != t.length() )
         return false;
@@ -30,7 +50,7 @@ public boolean isAnagram(String s, String t)
   Arrays.sort(inputArray2);
   return Arrays.equals(inputArray1,inputArray2);  
 }
-
+/*TC O(n) SC O(n)*/
 public boolean isAnagramUsingHashing(String s, String t) {
     if(s.length() != t.length() )
         return false;
