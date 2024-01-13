@@ -38,7 +38,33 @@ public class DutchNationalFlag {
     }
 
     private int[] countSort(int[] input) {
-        
+        int count0s=0,count1s=0,count2s=0;
+        for(int value:input)
+        {
+            if(value==0)
+                count0s++;
+            if(value==1)
+                count1s++;
+            if(value==2)
+                count2s++;
+        }
+        int count=0;
+        while(count0s>0)
+        {
+            input[count++]=0;
+            count0s--;
+        }
+        while(count1s>0)
+        {
+            input[count++]=1;
+            count1s--;
+        }
+        while(count2s>0)
+        {
+            input[count++]=2;
+            count2s--;
+        }
+        return input;
     }
 
     private int[] countSortInbuilt(int[] input) {
