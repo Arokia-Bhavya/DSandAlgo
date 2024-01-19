@@ -15,9 +15,18 @@ public class MinimumWindowSort {
     length = (right - left)+1
     TC O(nlogn) SC O(n)
     Two pointer
-    Iterate the elements
-    Check the element at index > max,update max=element at index otherwise right=index
-    Check the element at (n - index -1) < min,update min=element at (n - index -1) otherwise left=(n - index -1)
+    keep incrementing the left pointer until element at left less than element at left+1 pointer
+    keep decrementing the right pointer until element at right greater than element at right-1 pointer
+    length=(right - left)+1
+    To cover sorted array corner case
+    **********************************
+    when the left pointer reached end of the array that means array s already sorted
+    To cover case where elements exist out of the current found window
+    ******************************************************************
+    Iterate the elements from left to right,calculate the min and max
+    Iterate the element from left to 0,when there is any element found greater than min,update left
+    Iterate the element from right to end of array,when there is any element found less than max,update right
+    TC O(n) SC O(1)
      */
 
     @Test
@@ -47,22 +56,38 @@ public class MinimumWindowSort {
     private int calcLength(int[] input) {
         int max=Integer.MIN_VALUE;
         int min=Integer.MAX_VALUE;
-        int left=-1;
-        int right=-1;
-        for(int index=0;index<input.length;index++)
+        int left=0;
+        int right=input.length - 1;
+        while(left<input.length-1 && input[left]<=input[left+1])
         {
-            if(input[index]>=max)
-                max=input[index];
-            else
+            left++;
+        }
+        if(left==input.length - 1)
+            return 0;
+        while(right>0 && input[right]>=input[right-1])
+        {
+            right--;
+        }
+        for(int index=left;index<=right;index++)
+        {
+            max=Math.max(max,input[index]);
+            min=Math.min(min,input[index]);
+        }
+        for(int index=left;index>=0;index--)
+        {
+            if(input[index]>min) {
+                left = index;
+            }
+        }
+        for(int index=right;index<input.length;index++)
+        {
+            if(input[index]<max)
+            {
                 right=index;
-
-            if(input[input.length - index - 1]<=min)
-                min=input[input.length - index - 1];
-            else
-                left=input.length - index - 1;
+            }
 
         }
-        return right == -1 ? 0 : right - left + 1;
+        return (right-left)+1;
     }
 
     private int calcLengthBF(int[] input) {
